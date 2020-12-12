@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "yarn test:lint",
     "test": "run-p test:*",
     "test:unit": "jest --coverage",
     "test:browser": "run-s test:browser:*",
