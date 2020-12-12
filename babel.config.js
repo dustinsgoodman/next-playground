@@ -2,7 +2,13 @@ const moduleResolver = [
   'module-resolver',
   {
     root: ['./'],
-    alias: {},
+    alias: {
+      components: './src/components',
+      helpers: './src/helpers',
+      pages: './pages',
+      shared: './src/shared',
+      'unit-test-utils': './test/unit/unit-test-utils',
+    },
   },
 ];
 
