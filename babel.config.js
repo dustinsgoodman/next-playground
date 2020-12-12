@@ -4,6 +4,7 @@ const moduleResolver = [
     root: ['./'],
     alias: {
       components: './src/components',
+      gql: './src/gql',
       helpers: './src/helpers',
       pages: './pages',
       shared: './src/shared',

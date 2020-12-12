@@ -38,7 +38,7 @@ module.exports = {
     'fp/no-mutating-assign': 'error',
     'fp/no-this': 'error',
     'fp/no-valueof-field': 'error',
-    'no-console': 'error',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'import/no-extraneous-dependencies': [
       'error',
       {

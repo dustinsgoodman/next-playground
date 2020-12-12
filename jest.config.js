@@ -3,7 +3,9 @@ const path = require('path');
 const collectCoverageFrom = [
   './pages/**/*.{js,jsx}',
   './src/**/*.{js,jsx}',
+  '!./src/gql/**/*.{js,jsx}',
   '!**/*.stories.jsx',
+  '!./src/shared/apollo.js', // TODO: remove this when time permits
 ];
 
 const common = {
