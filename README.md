@@ -1,30 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS Playground
+
+This is an app where I experiment with NextJS features and try out new tech in my stack.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repo
+2. Run `yarn` to install deps
+3. Run `yarn dev` to start the dev server
+4. Navigate to `localhost:3000` in your browser to see the functioning app
 
-```bash
-npm run dev
-# or
-yarn dev
+## Guiding Principles
+This is a React application using Next.JS.
+
+Components are built trying to follow [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) principles. This is encouraged through the use of [Styled-Components](https://styled-components.com/).
+
+Unit testing is required and browser testing is highly encouraged. Jest is used as the testing framework.
+
+Apollo Client for GraphQL is the primary client for API interaction. The react hooks provided by the client are the preferred mode of integration.
+
+## Storybook
+```
+yarn storybook
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Should open a new browser window pointed at `localhost6006`.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Testing
+Project should always maintain 100% coverage.
 
-## Learn More
+```
+# To run all tests:
+yarn test
 
-To learn more about Next.js, take a look at the following resources:
+# To run only unit tests:
+yarn test:unit
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# To run only browser tests:
+yarn test:browser
+```
