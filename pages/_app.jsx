@@ -1,7 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from 'styled-components';
 
+import useApollo from 'shared/apollo';
 import GlobalStyle from 'shared/global-style';
 import { darkTheme } from 'components/styles/theme';
 
@@ -35,10 +37,16 @@ export const AppWrapper = ({ children }) => (
   </ThemeProvider>
 );
 
-const App = ({ Component, pageProps }) => (
-  <AppWrapper>
-    <Component {...pageProps} />
-  </AppWrapper>
-);
+const App = ({ Component, pageProps }) => {
+  const apolloClient = useApollo(pageProps.initialApolloState);
+
+  return (
+    <ApolloProvider client={apolloClient}>
+      <AppWrapper>
+        <Component {...pageProps} />
+      </AppWrapper>
+    </ApolloProvider>
+  );
+};
 
 export default App;
