@@ -11,6 +11,6 @@ const CharactersController = () => {
 
   const characters = data?.characters?.results ?? [];
   return <Characters characters={characters} />;
-}
+};
 
 export default CharactersController;

@@ -37,11 +37,11 @@ const initializeApollo = (initialState = null) => {
   }
 
   return client;
-}
+};
 
 const useApollo = (initialState) => {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
-}
+};
 
 export default useApollo;
