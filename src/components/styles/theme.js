@@ -1,9 +1,15 @@
-import spacing from './spacing';
+import { BASE_SPACING, DOUBLE_BASE_SPACING } from './spacing';
 
 export const lightTheme = {
-  spacing,
+  spacing: {
+    BASE_SPACING,
+    DOUBLE_BASE_SPACING,
+  },
 };
 
 export const darkTheme = {
-  spacing,
+  spacing: {
+    BASE_SPACING,
+    DOUBLE_BASE_SPACING,
+  },
 };

@@ -7,7 +7,7 @@ import { darkTheme } from 'components/styles/theme';
 
 const defaultTitle = 'Next Playground';
 
-const AppWrapper = ({ children }) => (
+export const AppWrapper = ({ children }) => (
   <ThemeProvider theme={darkTheme}>
     <GlobalStyle />
     <Helmet
