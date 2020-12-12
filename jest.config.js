@@ -1,15 +1,9 @@
 const path = require('path');
 
 const collectCoverageFrom = [
-  '**/*.{js,jsx}',
+  './pages/**/*.{js,jsx}',
+  './src/**/*.{js,jsx}',
   '!**/*.stories.jsx',
-  '!**/*.config.js',
-  '!**/*.test.{js,jsx}',
-  '!./src/page/test/**',
-  '!./test/**',
-  '!./src/pages/test/**',
-  '!.eslintrc.js',
-  '!./.storybook/**',
 ];
 
 const common = {
