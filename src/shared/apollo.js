@@ -6,16 +6,21 @@ import fetch from 'isomorphic-unfetch';
 
 let cachedClient;
 
-const createApolloClient = () =>
-  new ApolloClient({
+const createApolloClient = () => {
+  const { NEXT_PUBLIC_GITHUB_ACCESS_TOKEN } = process.env;
+  return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'https://rickandmortyapi.com/graphql', // 'https://api.github.com/graphql',
+      uri: 'https://api.github.com/graphql',
       credentials: 'same-origin',
       fetch,
+      headers: {
+        Authorization: `bearer ${NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
+      },
     }),
     cache: new InMemoryCache(),
   });
+};
 
 const initializeApollo = (initialState = null) => {
   const client = cachedClient ?? createApolloClient();

@@ -14,5 +14,6 @@ const proportionalSpacing = (proportion) =>
 
 const BASE_SPACING = proportionalSpacing(1);
 const DOUBLE_BASE_SPACING = proportionalSpacing(2);
+const HALF_BASE_SPACING = proportionalSpacing(0.5);
 
-export { BASE_SPACING, DOUBLE_BASE_SPACING, pixelToRem };
+export { BASE_SPACING, DOUBLE_BASE_SPACING, HALF_BASE_SPACING, pixelToRem };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { StylesProvider } from '@material-ui/core/styles';
 import { addDecorator, addParameters } from '@storybook/react';
 import {
   INITIAL_VIEWPORTS,
@@ -18,10 +19,12 @@ addParameters({
 });
 
 addDecorator(Story => (
-  <ThemeProvider theme={darkTheme}>
-    <GlobalStyle />
-    <Story />
-  </ThemeProvider>
+  <StylesProvider>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyle />
+      <Story />
+    </ThemeProvider>
+  </StylesProvider>
 ));
 
 export const parameters = {};
