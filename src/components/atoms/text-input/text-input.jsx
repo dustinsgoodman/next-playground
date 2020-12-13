@@ -16,6 +16,7 @@ const TextInput = React.forwardRef(
       placeholder = '',
       required = false,
       type = 'text',
+      variant = 'standard',
     },
     ref,
   ) => (
@@ -32,6 +33,7 @@ const TextInput = React.forwardRef(
       placeholder={placeholder}
       required={required}
       type={type}
+      variant={variant}
       inputRef={ref}
       data-testid={`${id}-text-input`}
     />

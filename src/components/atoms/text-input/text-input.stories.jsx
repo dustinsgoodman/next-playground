@@ -45,6 +45,12 @@ export default {
         type: 'text',
       },
     },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['standard', 'filled', 'outlined'],
+      },
+    },
   },
 };
 
