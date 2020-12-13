@@ -1,15 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import HelloWorld from 'components/atoms/hello-world';
+import UserSearch from 'components/organisms/user-search';
 
 const Home = () => (
   <>
     <Helmet
-      title="Hello there"
-      meta={[{ property: 'og:title', content: 'Hello there' }]}
+      title="Github User Search"
+      meta={[{ property: 'og:title', content: 'Github User Search' }]}
     />
 
-    <HelloWorld />
+    <UserSearch />
   </>
 );
 
