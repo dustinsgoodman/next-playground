@@ -4,19 +4,13 @@ import USER_SEARCH_QUERY from 'gql/user-search-query';
 import UserSearch from './user-search.view';
 
 const UserSearchController = () => {
-  const [searchQuery, setSearchQuery] = useState('example');
-  const [cursor, setCusor] = useState({ next: null, prev: null });
+  const [searchQuery, setSearchQuery] = useState(null);
+  const [paginate, setPaginate] = useState({ first: 30 });
 
   const variables = {
     query: searchQuery,
-    first: 30,
+    ...paginate,
   };
-
-  if (cursor.next) {
-    variables.after = cursor.next;
-  } else if (cursor.prev) {
-    variables.before = cursor.prev;
-  }
 
   const { data, loading, error } = useQuery(USER_SEARCH_QUERY, {
     variables,
@@ -44,17 +38,17 @@ const UserSearchController = () => {
   const { hasPreviousPage, hasNextPage, startCursor, endCursor } = pageInfo;
   const gotoNextPage = () => {
     if (!hasNextPage) return;
-    setCusor({
-      next: endCursor,
-      prev: null,
+    setPaginate({
+      first: 30,
+      after: endCursor,
     });
   };
 
   const gotoPrevPage = () => {
     if (!hasPreviousPage) return;
-    setCusor({
-      next: null,
-      prev: startCursor,
+    setPaginate({
+      last: 30,
+      before: startCursor,
     });
   };
 
@@ -66,7 +60,10 @@ const UserSearchController = () => {
       gotoPrevPage={gotoPrevPage}
       hasNextPage={pageInfo.hasNextPage}
       gotoNextPage={gotoNextPage}
-      setSearchQuery={setSearchQuery}
+      setSearchQuery={(newQuery) => {
+        setPaginate({ first: 30 });
+        setSearchQuery(newQuery);
+      }}
       loading={loading}
       error={error}
     />

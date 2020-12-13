@@ -1,8 +1,21 @@
 import gql from 'graphql-tag';
 
 const USER_SEARCH_QUERY = gql`
-  query UserSearchQuery($query: String!, $first: Int!) {
-    search(query: $query, type: USER, first: $first) {
+  query UserSearchQuery(
+    $query: String!
+    $first: Int
+    $last: Int
+    $before: String
+    $after: String
+  ) {
+    search(
+      query: $query
+      type: USER
+      first: $first
+      last: $last
+      before: $before
+      after: $after
+    ) {
       userCount
       nodes {
         ... on Organization {
