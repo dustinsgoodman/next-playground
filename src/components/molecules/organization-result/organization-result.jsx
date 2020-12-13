@@ -26,7 +26,7 @@ const OrganizationResult = ({
     </AvatarContainer>
     <DetailsContainer>
       <Row>
-        <NameDisplay>Organization: {name}</NameDisplay>
+        <NameDisplay>{name}</NameDisplay>
         <UsernameDisplay>{login}</UsernameDisplay>
       </Row>
       <Row>
