@@ -10,9 +10,13 @@ const createApolloClient = () =>
   new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'https://rickandmortyapi.com/graphql', // 'https://api.github.com/graphql',
+      uri: 'https://api.github.com/graphql',
       credentials: 'same-origin',
       fetch,
+      headers: {
+        // TODO: this is obviously really really bad but figuring out secrets isn't a priority rn
+        Authorization: 'bearer 5382e90860d4c67f4d7bdd1cbb23cd38950446cb',
+      },
     }),
     cache: new InMemoryCache(),
   });
